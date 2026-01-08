@@ -1,0 +1,21 @@
+{
+  "name": "cicd-practice",
+  "version": "1.0.0",
+  "description": "practice\r THIS IS A TEST UPDATE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prakruthimanjunath21/cicd-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Prakruthimanjunath21/cicd-practice/issues"
+  },
+  "homepage": "https://github.com/Prakruthimanjunath21/cicd-practice#readme"
+}
