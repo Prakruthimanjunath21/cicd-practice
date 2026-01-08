@@ -1,24 +1,36 @@
-name: Platform Engineer CI
+name: Data Platform CI/CD
 
 on:
   push:
     branches: ["main"]
 
 jobs:
-  platform_check:
+  build_and_check:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download project code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Python on cloud computer
+      - name: Setup Python
         uses: actions/setup-python@v3
         with:
           python-version: "3.10"
 
-      - name: Check if SQL file exists
-        run: echo "SQL is there! Good job! 🟢"
+      - name: Check SQL file
+        run: |
+          if [ -f "data.sql" ]; then
+            echo "SQL file exists! 🟢"
+          else
+            echo "SQL missing! 🔴"
+            exit 1
+          fi
 
-      - name: Run Platform Check Script
+      - name: Run Python check script
         run: python platform-check.py
+
+      - name: Build Docker image
+        run: docker build -t my-data-platform .
+
+      - name: Run Docker container
+        run: docker run my-data-platform
