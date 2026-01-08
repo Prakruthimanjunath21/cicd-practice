@@ -1,0 +1,21 @@
+name: SQL CI Check
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  sql_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check SQL file exists
+        run: |
+          if [ -f "data.sql" ]; then
+            echo "SQL file found! 🟢"
+          else
+            echo "SQL file not found! 🔴"
+            exit 1
+          fi
