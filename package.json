@@ -4,7 +4,7 @@
   "description": "practice\r THIS IS A TEST UPDATE",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests yet, but pipeline works!\""
   },
   "repository": {
     "type": "git",
