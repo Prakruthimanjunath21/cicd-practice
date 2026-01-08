@@ -30,7 +30,8 @@ jobs:
         run: python platform-check.py
 
       - name: Build Docker image
-        run: docker build -t my-data-platform .
+        run: docker build -t my-data-platform -f dockerfile
+
 
       - name: Run Docker container
         run: docker run my-data-platform
